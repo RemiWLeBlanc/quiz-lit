@@ -32,11 +32,18 @@ def map():
 @app.route('/remi', methods=['POST'])
 def my_form_post():
     if request.method == 'POST':
-        print('here')
         a = request.form['answer']
         s = request.form['solution']
-        return render_template('remi.html', answer=a, solution=s)
-    return render_template('remi.html')
+        # return render_template('remi.html', answer=a, solution=s)
+        return render_template('remi.html', equality = check_equality(s,a), checked=True, ans=a, sol=s)
+
+    return render_template('remi.html', checked=False)
+
+def check_equality(sol, ans):
+    if sol.lower() == ans.lower():
+        return True
+    else:
+        return False
 
 
 if __name__ == '__main__':

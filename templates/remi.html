@@ -13,17 +13,26 @@
 <input type="submit">
 </form>
 
-    <!--  Show the Output  -->
-    {{solution}} {{answer}}
+    {% if checked %}
+    	{{sol}} {{ans}} 
 
-    <!--  Do wathever you want with that  -->
+	    {% if equality %}
+	    	<p>Answer equals solution</p>
+	    	
+	    {% else %}
+	    	<p>Answer DOES NOT equal solution</p>
+	    {% endif %}
+	{% endif %}
+
+<!--     {{solution}} {{answer}}
+
     {% if solution and answer %}
         {% if solution == answer %}
              <p>Answer equals solution</p>
         {% else %}
             <p>Answer does not equal solution</p>
         {% endif %}
-    {% endif %}
+    {% endif %} -->
 
 </body>
 </html>
