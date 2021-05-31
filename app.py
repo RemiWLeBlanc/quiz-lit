@@ -14,7 +14,7 @@
 
 """
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 
 app = Flask(__name__)
@@ -27,6 +27,15 @@ def index():
 
 @app.route('/remi')
 def map():
+    return render_template('remi.html')
+
+@app.route('/remi', methods=['POST'])
+def my_form_post():
+    if request.method == 'POST':
+        print('here')
+        a = request.form['answer']
+        s = request.form['solution']
+        return render_template('remi.html', answer=a, solution=s)
     return render_template('remi.html')
 
 
