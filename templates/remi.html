@@ -5,5 +5,34 @@
     <h1>Welcome to Our App!</h1>
     <h3>This is Remi's site</h3>
 
+
+<h4>Enter Solution and Answer</h4>
+<form method="POST">
+<input name="solution">
+<input name="answer">
+<input type="submit">
+</form>
+
+    {% if checked %}
+    	{{sol}} {{ans}} 
+
+	    {% if equality %}
+	    	<p>Answer equals solution</p>
+	    	
+	    {% else %}
+	    	<p>Answer DOES NOT equal solution</p>
+	    {% endif %}
+	{% endif %}
+
+<!--     {{solution}} {{answer}}
+
+    {% if solution and answer %}
+        {% if solution == answer %}
+             <p>Answer equals solution</p>
+        {% else %}
+            <p>Answer does not equal solution</p>
+        {% endif %}
+    {% endif %} -->
+
 </body>
 </html>
